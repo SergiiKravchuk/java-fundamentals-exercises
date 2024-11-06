@@ -1,5 +1,7 @@
 package com.bobocode.cs;
 
+import com.bobocode.util.ExerciseNotCompletedException;
+
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -171,27 +173,7 @@ public class LinkedList<T> implements List<T> {
      */
     @Override
     public T remove(int index) {
-        T deletedElement;
-        if (index == 0 && !isEmpty()) {
-            deletedElement = first.value;
-            removeHead();
-        } else {
-            Node<T> previousNode = findNodeByIndex(index - 1);
-            deletedElement = previousNode.next.value;
-            previousNode.next = previousNode.next.next;
-            if (index == size - 1) {
-                last = previousNode;
-            }
-        }
-        size--;
-        return deletedElement;
-    }
-
-    private void removeHead() {
-        first = first.next;
-        if (first == null) {
-            last = null;
-        }
+        throw new ExerciseNotCompletedException();
     }
 
     /**
@@ -201,14 +183,7 @@ public class LinkedList<T> implements List<T> {
      */
     @Override
     public boolean contains(T element) {
-        Node<T> currentNode = first;
-        while (currentNode != null) {
-            if (currentNode.value.equals(element)) {
-                return true;
-            }
-            currentNode = currentNode.next;
-        }
-        return false;
+        throw new ExerciseNotCompletedException();
     }
 
     /**
